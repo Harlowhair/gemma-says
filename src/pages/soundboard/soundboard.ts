@@ -15,7 +15,7 @@ import { NgZone } from '@angular/core';
 })
 export class SoundboardPage {
 
-  title = 'Ionic Soundboard';
+  title = 'Gemma Says...';
 
   sounds: any = [];
 

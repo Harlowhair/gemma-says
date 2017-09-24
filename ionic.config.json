@@ -1,6 +1,6 @@
 {
   "name": "ionic-soundboard",
-  "app_id": "",
+  "app_id": "8a693f51",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

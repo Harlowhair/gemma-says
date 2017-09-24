@@ -7,7 +7,7 @@ export class PreferencesService {
 
   get DEFAULT_PREFERENCES() {
     return {
-      baseUrl: 'http://kalis.me',
+      baseUrl: 'https://s3-eu-west-1.amazonaws.com/soundboard-gc',
       soundsFile: '/sounds.json',
       cachingEnabled: true
     };
