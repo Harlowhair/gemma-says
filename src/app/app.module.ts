@@ -18,6 +18,15 @@ import { Media } from '@ionic-native/media';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+declare var window;
+
+export class MyErrorHandler implements ErrorHandler {
+  handleError(err: any): void {
+    window.Ionic.handleNewError(err);
+  }
+}
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -46,7 +55,8 @@ import { StatusBar } from '@ionic-native/status-bar';
     Media,
     SplashScreen,
     StatusBar,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: MyErrorHandler }
   ]
 })
 export class AppModule {}
+
