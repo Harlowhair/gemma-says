@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.ionicframework.ionicsoundboard279073" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Gemma In Your Pocket</name>
-    <description>Everyone needs Gemma Collins in their pocket!</description>
+    <description>Because everyone needs Gemma Collins in their pocket!</description>
     <author email="rob@clicthru.com" href="http://clicthru.com/">Clicthru</author>
     <content src="index.html" />
     <access origin="*" />
