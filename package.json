@@ -29,7 +29,6 @@
         "cordova-browser": "^4.1.0",
         "cordova-ios": "^4.5.1",
         "cordova-plugin-compat": "^1.1.0",
-        "cordova-plugin-console": "1.0.5",
         "cordova-plugin-device": "1.1.4",
         "cordova-plugin-file": "^4.3.3",
         "cordova-plugin-file-transfer": "^1.6.3",
@@ -51,7 +50,6 @@
     },
     "cordovaPlugins": [
         "cordova-plugin-whitelist",
-        "cordova-plugin-console",
         "cordova-plugin-statusbar",
         "cordova-plugin-device",
         "cordova-plugin-splashscreen",
@@ -69,7 +67,6 @@
     "cordova": {
         "plugins": {
             "cordova-plugin-file": {},
-            "cordova-plugin-console": {},
             "cordova-plugin-device": {},
             "cordova-plugin-splashscreen": {},
             "cordova-plugin-statusbar": {},
