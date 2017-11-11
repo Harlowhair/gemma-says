@@ -79,6 +79,7 @@ export class SoundboardPage {
           if (!this.cacheService.hasInCache(sound)) {
             this.sounds.push({
               title: sound.title,
+              slug: sound.title.toLowerCase().replace(/\s+/g, '-'),
               src: sound.file,
               isPlaying: false
             });
@@ -110,6 +111,8 @@ export class SoundboardPage {
         sound.src = cachedSound.src;
         sound.remoteSrc = cachedSound.remoteSrc;
         sound.cacheDate = cachedSound.cacheDate;
+        sound.slug = cachedSound.slug;
+        sound.title = cachedSound.title;
         return resolve();
       })
       .catch(error => console.log(error));

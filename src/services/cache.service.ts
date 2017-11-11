@@ -69,7 +69,7 @@ export class CacheService {
 
   /* Checks if sound with the same name already exists in cache */
   hasInCache(sound: any): boolean {
-    return this.getCache().findIndex(cachedSound => cachedSound.title === sound.title) > -1;
+    return this.getCache().findIndex(cachedSound => cachedSound.slug === sound.slug) > -1;
   }
 
   /* Downloads a file into the local data directory, adding the sound object
@@ -91,7 +91,7 @@ export class CacheService {
       }
 
       /* Download file at sound.src into the local data directory */
-      this.fileTransfer.download(sound.src, this.file.dataDirectory + sound.title)
+      this.fileTransfer.download(sound.src, this.file.dataDirectory + sound.slug)
       .then(entry => {
         /* Media plugin can't play sounds with 'file://' prefix on ios */
         let src = entry.toURL();
@@ -101,12 +101,13 @@ export class CacheService {
 
         const cachedSound = {
           title: sound.title,
+          slug: sound.slug,
           src: src,
           remoteSrc: sound.src,
           cacheDate: new Date()
         };
 
-        return this.storage.set('cache:' + cachedSound.title, cachedSound)
+        return this.storage.set('cache:' + cachedSound.slug, cachedSound)
         .then(() => {
           this.getCache().push(cachedSound);
           return resolve(cachedSound);
@@ -119,7 +120,7 @@ export class CacheService {
   /* Removes sound from local data directory and cache storage */
   removeFromCache(sound: any): Promise<any> {
     return new Promise((resolve, reject) => {
-      const index = this.getCache().findIndex(cachedSound => cachedSound.title === sound.title);
+      const index = this.getCache().findIndex(cachedSound => cachedSound.slug === sound.slug);
       if (index === -1) {
         return reject('Not in cache');
       }
@@ -128,11 +129,11 @@ export class CacheService {
       this.getCache().splice(index, 1);
 
       /* Remove the sound from cache storage */
-      this.storage.remove('cache:' + sound.title)
+      this.storage.remove('cache:' + sound.slug)
       .catch(error => reject(error));
 
       /* Remove the sound from filesystem */
-      return this.file.removeFile(this.file.dataDirectory, sound.title);
+      return this.file.removeFile(this.file.dataDirectory, sound.slug);
     });
   }
 
@@ -151,6 +152,6 @@ export class CacheService {
     if (!this.hasInCache(sound)) {
       return null;
     }
-    return this.getCache()[this.getCache().findIndex(cachedSound => cachedSound.title === sound.title)];
+    return this.getCache()[this.getCache().findIndex(cachedSound => cachedSound.slug === sound.slug)];
   }
 }
