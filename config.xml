@@ -106,5 +106,5 @@
     <allow-navigation href="http://192.168.56.1:8101" />
     <engine name="browser" spec="~4.1.0" />
     <engine name="ios" spec="latest" />
-    <engine name="android" spec="6.2.3" />
+    <engine name="android" spec="6.2.0" />
 </widget>
