@@ -9,7 +9,7 @@ import { CacheService } from '../../services/cache.service';
 export class PreferencesPage {
   cachingEnabled: boolean;
 
-  constructor(private cacheService: CacheService, private preferencesService: PreferencesService, private viewCtrl: ViewController) {
+  constructor(public cacheService: CacheService, private preferencesService: PreferencesService, private viewCtrl: ViewController) {
     this.cachingEnabled = this.preferencesService.get('cachingEnabled');
   }
 
