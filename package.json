@@ -1,6 +1,6 @@
 {
-  "name": "ionic-soundboard",
-  "author": "Rosco Kalis",
+  "name": "Gemma-Says",
+  "author": "Rob Harlow",
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
