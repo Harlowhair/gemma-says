@@ -16,8 +16,8 @@
     "@angular/http": "4.4.4",
     "@angular/platform-browser": "4.4.4",
     "@angular/platform-browser-dynamic": "4.4.4",
-    "@ionic-native/core": "4.4.2",
-    "@ionic-native/file": "^4.4.2",
+    "@ionic-native/core": "4.5.2",
+    "@ionic-native/file": "4.5.2",
     "@ionic-native/file-transfer": "^4.4.2",
     "@ionic-native/media": "^4.1.0",
     "@ionic-native/splash-screen": "^3.12.1",
@@ -43,7 +43,6 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "^3.1.6",
-    "ionic": "^3.9.2",
     "typescript": "2.4.2"
   },
   "cordovaPlugins": [
